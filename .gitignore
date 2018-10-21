@@ -54,6 +54,7 @@ coverage.xml
 *.log
 home_local_settings.py
 home_settings_local.py
+local_machine_settings.py
 features.txt
 
 # Flask stuff:

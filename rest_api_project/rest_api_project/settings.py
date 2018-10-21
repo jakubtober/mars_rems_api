@@ -20,12 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = [
-    'jakubtober.pythonanywhere.com'
+    'jakubtober.pythonanywhere.com',
+    '127.0.0.1',
 ]
-
 
 # Application definition
 
@@ -119,10 +118,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 try:
-    from rest_api_project.home_settings_local import *
+    from rest_api_project.local_machine_settings import *
     print('Home settings used...')
 except ImportError:
-    print('home_settings_local.py not added')
+    print('local_machine_settings.py not added')
     try:
         from rest_api_project.deployment_settings import *
         print('Production settings used...')
