@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -115,11 +117,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+print(STATIC_URL)
 
 try:
     from rest_api_project.local_machine_settings import *
-    print('Home settings used...')
+    print('Local machine settings used...')
 except ImportError:
     print('local_machine_settings.py not added')
     try:
