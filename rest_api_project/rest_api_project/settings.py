@@ -119,7 +119,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 try:
-    from climbing_planner.settings_local import *
+    from rest_api_project.settings_local import *
 except ImportError:
     print('settings_local.py not configured')
     pass
