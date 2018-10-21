@@ -6,4 +6,4 @@ from django.http import HttpResponse
 
 class WelcomeView(View):
     def get(self, request):
-        return HttpResponse('Hello from Mars citizens of Earth!')
+        return HttpResponse('Hello citizens of Earth!')

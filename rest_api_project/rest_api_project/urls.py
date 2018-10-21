@@ -21,5 +21,5 @@ from rest_app.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', WelcomeView.as_view(), name='welcome'),
+    path('', WelcomeView.as_view(), name='welcome'),
 ]

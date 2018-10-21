@@ -119,7 +119,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 try:
-    from rest_api_project.settings_local import *
+    from rest_api_project.home_settings_local import *
+    print('Home settings used...')
 except ImportError:
-    print('settings_local.py not configured')
-    pass
+    print('home_settings_local.py not added')
+    try:
+        from rest_api_project.deployment_settings import *
+        print('Production settings used...')
+    except ImportError:
+        print('settings_local.py not configured')
