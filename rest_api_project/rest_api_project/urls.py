@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_app.views import (
     WelcomeView,
+    SolListAPIView
 )
-from .api import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', WelcomeView.as_view(), name='welcome'),
-    path('api/', include(router.urls)),
+    path('api/sols/', SolListAPIView.as_view(), name='sols'),
 ]
