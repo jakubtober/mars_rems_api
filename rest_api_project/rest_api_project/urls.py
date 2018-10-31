@@ -36,7 +36,8 @@ urlpatterns = [
     path('api/token-auth/', views.obtain_auth_token),
 ]
 
-# To test auth token view
+# auth token view tests
 # request = requests.post('http://127.0.0.1:8000/api/token-auth/', data={'username': 'username', 'password': 'password'})
 # {"token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
-# request = requests.post('http://127.0.0.1:8000/api/sols/create/', headers={'Authorization': 'Token xxxxxxxxxxxxxxx'})
+# request = requests.post('http://127.0.0.1:800/api/sols/create/', headers={'Authorization': 'Token xxxxxxxxxxxxxxxxxxxxxxxxxxxx'})
+# request = requests.post('http://jakubtober.pythonanywhere.com/api/sols/create/', headers={'Authorization': 'Token xxxxxxxxxxxxxxxxxx'})
