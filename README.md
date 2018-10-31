@@ -7,8 +7,8 @@ API uses TokenAuthentication, CREATE, UPDATE and DELETE views require user authe
 ## API endpoints
 
 * /api/sols/
-* /api/sols/id/
+* /api/sols/sol_number/
 * /api/token-auth/
 * /api/sols/create/ - authentication is required
-* /api/sols/id/update/ - authentication is required
-* /api/sols/id/delete/ - authentication is required
+* /api/sols/sol_number/update/ - authentication is required
+* /api/sols/sol_number/delete/ - authentication is required
