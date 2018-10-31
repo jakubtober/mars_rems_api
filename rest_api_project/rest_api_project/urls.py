@@ -15,13 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
 from rest_app.views import (
     WelcomeView,
-    SolListAPIView
+    SolCreateView,
+    SolListAPIView,
+    SolDetailView,
+    SolDeleteView,
+    SolUpdateView,
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', WelcomeView.as_view(), name='welcome'),
-    path('api/sols/', SolListAPIView.as_view(), name='sols'),
+    path('api/sols/', SolListAPIView.as_view(), name='sols-list'),
+    path('api/sols/<int:sol>/', SolDetailView.as_view(), name='sol-detail'),
+    path('api/sols/create/', SolCreateView.as_view(), name='sol-detail'),
+    path('api/sols/<int:sol>delete/', SolDeleteView.as_view(), name='sol-delete'),
+    path('api/sols/<int:sol>/update/', SolUpdateView.as_view(), name='sol-update'),
+    path('api/token-auth/', views.obtain_auth_token),
 ]
+
+# To test auth token view
+# request = requests.post('http://127.0.0.1:8000/api/token-auth/', data={'username': 'username', 'password': 'password'})
+# {"token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+# request = requests.post('http://127.0.0.1:8000/api/sols/create/', headers={'Authorization': 'Token xxxxxxxxxxxxxxx'})
