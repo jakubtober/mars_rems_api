@@ -1,4 +1,4 @@
-# Project Title
+# MARS REMS Data - REST API
 
 REST API created using Django Rest Frameworok - CRUD for Mars REMS data (will be used by MartianUpdates twitter bot).
 
